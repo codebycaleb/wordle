@@ -15507,8 +15507,9 @@
                   });
                   input.addEventListener("keypress", function (a) {
                     if (a.key == "Enter") {
-                      if (validateCustomWord(input.value)) {
-                        var link = newCustomWordLink(input.value);
+                      var word = input.value.toLowerCase();
+                      if (validateCustomWord(word)) {
+                        var link = newCustomWordLink(word);
                         window.location.href = link;
                       }
                     }
