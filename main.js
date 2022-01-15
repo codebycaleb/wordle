@@ -1240,7 +1240,7 @@
     }
     var Sa = document.createElement("template");
     Sa.innerHTML =
-      '\n  <style>\n  .setting {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid var(--color-tone-4);\n    padding: 16px 0;\n  }\n\n  a, a:visited {\n    color: var(--color-tone-2);\n  }\n\n  .title {\n    font-size: 18px;\n  }\n  .text {\n    padding-right: 8px;\n  }\n  .description {\n    font-size: 12px;\n    color: var(--color-tone-2);\n  }\n\n  #footnote {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    padding: 16px;\n    color: var(--color-tone-2);\n    font-size: 12px;\n    text-align: right;\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-end;\n  }\n\n  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {\n    .setting {\n      padding: 16px;\n    }\n  }\n\n  </style>\n  <div class="sections">\n    <section>\n      <div class="setting">\n        <div class="text">\n          <div class="title">Hard Mode</div>\n          <div class="description">Any revealed hints must be used in subsequent guesses</div>\n        </div>\n        <div class="control">\n          <game-switch id="hard-mode" name="hard-mode"></game-switch>\n        </div>\n      </div>\n      <div class="setting">\n        <div class="text">\n          <div class="title">Dark Theme</div>\n        </div>\n        <div class="control">\n          <game-switch id="dark-theme" name="dark-theme"></game-switch>\n        </div>\n      </div>\n      <div class="setting">\n        <div class="text">\n          <div class="title">Color Blind Mode</div>\n          <div class="description">High contrast colors</div>\n        </div>\n        <div class="control">\n          <game-switch id="color-blind-theme" name="color-blind-theme"></game-switch>\n        </div>\n      </div>\n    </section>\n\n    <section>\n      <div class="setting">\n        <div class="text">\n          <div class="title">Feedback</div>\n        </div>\n        <div class="control">\n          <a href="mailto:wordle@powerlanguage.co.uk?subject=Feedback" title="wordle@powerlanguage.co.uk">Email</a>\n          |\n          <a href="https://twitter.com/intent/tweet?screen_name=powerlanguish" target="blank" title="@powerlanguish">Twitter</a>\n        </div>\n      </div>\n    </section>\n  </div>\n  <div id="footnote">\n    <div id="copyright">Copyright 2021-2022. All Rights Reserved.</div>\n    <div>\n      <div id="puzzle-number"></div>\n      <div id="hash"></div>\n    </div>\n  </div>\n';
+      '\n  <style>\n  .setting {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid var(--color-tone-4);\n    padding: 16px 0;\n  }\n\n  a, a:visited {\n    color: var(--color-tone-2);\n  }\n\n  .title {\n    font-size: 18px;\n  }\n  .text {\n    padding-right: 8px;\n  }\n  .description {\n    font-size: 12px;\n    color: var(--color-tone-2);\n  }\n\n  #footnote {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    padding: 16px;\n    color: var(--color-tone-2);\n    font-size: 12px;\n    text-align: right;\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-end;\n  }\n\n  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {\n    .setting {\n      padding: 16px;\n    }\n  }\n\n  </style>\n  <div class="sections">\n    <section>\n      <div class="setting">\n        <div class="text">\n          <div class="title">Hard Mode</div>\n          <div class="description">Any revealed hints must be used in subsequent guesses</div>\n        </div>\n        <div class="control">\n          <game-switch id="hard-mode" name="hard-mode"></game-switch>\n        </div>\n      </div>\n      <div class="setting">\n        <div class="text">\n          <div class="title">Dark Theme</div>\n        </div>\n        <div class="control">\n          <game-switch id="dark-theme" name="dark-theme"></game-switch>\n        </div>\n      </div>\n      <div class="setting">\n        <div class="text">\n          <div class="title">Color Blind Mode</div>\n          <div class="description">High contrast colors</div>\n        </div>\n        <div class="control">\n          <game-switch id="color-blind-theme" name="color-blind-theme"></game-switch>\n        </div>\n      </div>\n    </section>\n\n    <section>\n      <div class="setting">\n        <div class="text">\n          <div class="title">Feedback</div>\n        </div>\n        <div class="control">\n          <a href="mailto:wordle@powerlanguage.co.uk?subject=Feedback" title="wordle@powerlanguage.co.uk">Email</a>\n          |\n          <a href="https://twitter.com/intent/tweet?screen_name=powerlanguish" target="blank" title="@powerlanguish">Twitter</a>\n        </div>\n      </div>\n    </section>\n  </div>\n  <div id="footnote">\n    <div id="copyright">Copyright 2021-2022. All Rights Reserved.</div>\n    <div>\n      <div id="puzzle-number"></div>\n    </div>\n  </div>\n';
     var _a = (function (e) {
       r(t, e);
       var a = h(t);
@@ -1263,10 +1263,6 @@
               var e,
                 a = this;
               this.shadowRoot.appendChild(Sa.content.cloneNode(!0)),
-                (this.shadowRoot.querySelector("#hash").textContent =
-                  null === (e = window.wordle) || void 0 === e
-                    ? void 0
-                    : e.hash),
                 (this.shadowRoot.querySelector("#puzzle-number").textContent =
                   "#".concat(this.gameApp.dayOffset)),
                 this.shadowRoot.addEventListener(
@@ -1374,11 +1370,7 @@
     customElements.define("game-toast", Aa),
       (window.dataLayer = window.dataLayer || []),
       Ca("js", new Date());
-    Ca("config", "G-2SSGMHY3NP", {
-      app_version:
-        null === (Ea = window.wordle) || void 0 === Ea ? void 0 : Ea.hash,
-      debug_mode: !1,
-    });
+
     var La = [
         "cigar",
         "rebut",
@@ -14390,10 +14382,39 @@
         t = new Date(a).setHours(0, 0, 0, 0) - s.setHours(0, 0, 0, 0);
       return Math.round(t / 864e5);
     }
+    function getCustomWord() {
+      // if the query string contains a custom param, base64 decode that and return it
+      const urlParams = new URLSearchParams(window.location.search);
+      const custom = urlParams.get("custom");
+      if (custom) {
+        return atob(decodeURIComponent(custom));
+      }
+      return "";
+    }
+    function validateCustomWord(word) {
+      // check if the word is a valid custom word
+      return La.includes(word || Ta.includes(word));
+    }
+    function newCustomWordLink(word) {
+      // create a new link with the custom param
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.set("custom", encodeURIComponent(btoa(word)));
+      return (
+        window.location.origin +
+        window.location.pathname +
+        "?" +
+        urlParams.toString()
+      );
+    }
+    function randomWordLink() {
+      // create a new link for a random word (no custom param)
+      return window.location.origin + window.location.pathname;
+    }
     function Da(e) {
-      var a,
-        s = Ga(e);
-      return (a = s % La.length), La[a];
+      // this function determines the solution (normally "today's word", but now: random or custom)
+      var a = Math.floor(Math.random() * La.length);
+      const customWord = getCustomWord();
+      return customWord ? customWord : La[a];
     }
     function Ga(e) {
       return Na(Ha, e);
@@ -14501,36 +14522,23 @@
             (e.today = new Date());
           var o = za();
           return (
-            (e.lastPlayedTs = o.lastPlayedTs),
-            !e.lastPlayedTs || Na(new Date(e.lastPlayedTs), e.today) >= 1
-              ? ((e.boardState = new Array(6).fill("")),
-                (e.evaluations = new Array(6).fill(null)),
-                (e.solution = Da(e.today)),
-                (e.dayOffset = Ga(e.today)),
-                (e.lastCompletedTs = o.lastCompletedTs),
-                (e.hardMode = o.hardMode),
-                (e.restoringFromLocalStorage = !1),
-                ja({
-                  rowIndex: e.rowIndex,
-                  boardState: e.boardState,
-                  evaluations: e.evaluations,
-                  solution: e.solution,
-                  gameStatus: e.gameStatus,
-                }),
-                Ca("event", "level_start", {
-                  level_name: Wa(e.solution),
-                }))
-              : ((e.boardState = o.boardState),
-                (e.evaluations = o.evaluations),
-                (e.rowIndex = o.rowIndex),
-                (e.solution = o.solution),
-                (e.dayOffset = Ga(e.today)),
-                (e.letterEvaluations = $a(e.boardState, e.evaluations)),
-                (e.gameStatus = o.gameStatus),
-                (e.lastCompletedTs = o.lastCompletedTs),
-                (e.hardMode = o.hardMode),
-                e.gameStatus !== Za && (e.canInput = !1),
-                (e.restoringFromLocalStorage = !0)),
+            ((e.boardState = new Array(6).fill("")),
+            (e.evaluations = new Array(6).fill(null)),
+            (e.solution = Da()),
+            (e.dayOffset = Ga(e.today)),
+            (e.lastCompletedTs = o.lastCompletedTs),
+            (e.hardMode = o.hardMode),
+            (e.restoringFromLocalStorage = !1),
+            ja({
+              rowIndex: e.rowIndex,
+              boardState: e.boardState,
+              evaluations: e.evaluations,
+              solution: e.solution,
+              gameStatus: e.gameStatus,
+            }),
+            Ca("event", "level_start", {
+              level_name: Wa(e.solution),
+            })),
             e
           );
         }
@@ -14767,11 +14775,7 @@
                   (this.$board = this.shadowRoot.querySelector("#board")),
                   (this.$keyboard =
                     this.shadowRoot.querySelector("game-keyboard")),
-                  this.sizeBoard(),
-                  this.lastPlayedTs ||
-                    setTimeout(function () {
-                      return e.showHelpModal();
-                    }, 100);
+                  this.sizeBoard();
                 for (var a = 0; a < 6; a++) {
                   var s = document.createElement("game-row");
                   s.setAttribute("letters", this.boardState[a]),
@@ -15389,7 +15393,7 @@
     }
     var Cs = document.createElement("template");
     Cs.innerHTML =
-      '\n  <style>\n    .container {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n      padding: 16px 0; \n    }\n    h1 {\n      font-weight: 700;\n      font-size: 16px;\n      letter-spacing: 0.5px;\n      text-transform: uppercase;\n      text-align: center;\n      margin-bottom: 10px;\n    }\n  \n    #statistics {\n      display: flex;\n      margin-bottom: \n    }\n\n    .statistic-container {\n      flex: 1;\n    }\n\n    .statistic-container .statistic {\n      font-size: 36px;\n      font-weight: 400;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      text-align: center;\n      letter-spacing: 0.05em;\n      font-variant-numeric: proportional-nums;\n    }\n\n    .statistic.timer {\n      font-variant-numeric: initial;\n    }\n\n    .statistic-container .label {\n      font-size: 12px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      text-align: center;\n    }\n\n    #guess-distribution {\n      width: 80%;\n    }\n\n    .graph-container {\n      width: 100%;\n      height: 20px;\n      display: flex;\n      align-items: center;\n      padding-bottom: 4px;\n      font-size: 14px;\n      line-height: 20px;\n    }\n\n    .graph-container .graph {\n      width: 100%;\n      height: 100%;\n      padding-left: 4px;\n    }\n\n    .graph-container .graph .graph-bar {\n      height: 100%;\n      /* Assume no wins */\n      width: 0%;\n      position: relative;\n      background-color: var(--color-absent);\n      display: flex;\n      justify-content: center;\n    }\n\n    .graph-container .graph .graph-bar.highlight {\n      background-color: var(--color-correct);\n    }\n\n    .graph-container .graph .graph-bar.align-right {\n      justify-content: flex-end;\n      padding-right: 8px;\n    }\n\n    .graph-container .graph .num-guesses {\n      font-weight: bold;\n      color: var(--tile-text-color);\n    }\n\n    #statistics,\n    #guess-distribution {\n      padding-bottom: 10px;\n    }\n\n    .footer {\n      display: flex;\n      width: 100%;\n    }\n\n    .countdown {\n      border-right: 1px solid var(--color-tone-1);\n      padding-right: 12px;\n      width: 50%;\n    }\n\n    .share {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      padding-left: 12px;\n      width: 50%;\n    }\n\n    .no-data {\n      text-align: center;\n    }\n\n    button#share-button {\n      background-color: var(--key-bg-correct);\n      color: var(--key-evaluated-text-color);\n      font-family: inherit;\n      font-weight: bold;\n      border-radius: 4px;\n      cursor: pointer;\n      border: none;\n      user-select: none;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      text-transform: uppercase;\n      -webkit-tap-highlight-color: rgba(0,0,0,0.3);\n      width: 80%;\n      font-size: 20px;\n      height: 52px;\n      -webkit-filter: brightness(100%);\n    }\n    button#share-button:hover {\n      opacity: 0.9;\n    }\n    button#share-button game-icon {\n      width: 24px;\n      height: 24px;\n      padding-left: 8px;\n    }\n  </style>\n\n  <div class="container">\n    <h1>Statistics</h1>\n    <div id="statistics"></div>\n    <h1>Guess Distribution</h1>\n    <div id="guess-distribution"></div>\n    <div class="footer"></div>\n  </div>\n';
+      '\n  <style>    .container {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n      padding: 16px 0; \n    }\n    \n    h1 {\n      font-weight: 700;\n      font-size: 16px;\n      letter-spacing: 0.5px;\n      text-transform: uppercase;\n      text-align: center;\n      margin-bottom: 10px;\n    }\n  \n    #statistics {\n      display: flex;\n      margin-bottom: \n    }\n\n    .statistic-container {\n      flex: 1;\n    }\n\n    .statistic-container .statistic {\n      font-size: 36px;\n      font-weight: 400;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      text-align: center;\n      letter-spacing: 0.05em;\n      font-variant-numeric: proportional-nums;\n    }\n\n    .statistic.timer {\n      font-variant-numeric: initial;\n    }\n\n    .statistic-container .label {\n      font-size: 12px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      text-align: center;\n    }\n\n    #guess-distribution {\n      width: 80%;\n    }\n\n    .graph-container {\n      width: 100%;\n      height: 20px;\n      display: flex;\n      align-items: center;\n      padding-bottom: 4px;\n      font-size: 14px;\n      line-height: 20px;\n    }\n\n    .graph-container .graph {\n      width: 100%;\n      height: 100%;\n      padding-left: 4px;\n    }\n\n    .graph-container .graph .graph-bar {\n      height: 100%;\n      /* Assume no wins */\n      width: 0%;\n      position: relative;\n      background-color: var(--color-absent);\n      display: flex;\n      justify-content: center;\n    }\n\n    .graph-container .graph .graph-bar.highlight {\n      background-color: var(--color-correct);\n    }\n\n    .graph-container .graph .graph-bar.align-right {\n      justify-content: flex-end;\n      padding-right: 8px;\n    }\n\n    .graph-container .graph .num-guesses {\n      font-weight: bold;\n      color: var(--tile-text-color);\n    }\n\n    #statistics,\n    #guess-distribution {\n      padding-bottom: 10px;\n    }\n\n    .footer {\n      display: flex;\n      width: 100%;\n    }\n\n    .custom {\n      padding-right: 6px;\n      margin-bottom: 10px;\n      width: 50%;\n      border-right: 1px solid var(--color-tone-1);\n    }\n    \n    .custom input {\n      display: block;\n      margin: 0 auto;\n      width: 100px;\n      height: 16px;\n      text-transform: uppercase;\n      text-align: center;\n      font-weight: bold;\n      background-color: var(--key-bg-correct);\n      color: var(--key-evaluated-text-color);\n      border-radius: 4px;\n      border: none;\n    }\n\n    .random {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      padding-left: 6px;\n      width: 50%;\n    }\n\n    .no-data {\n      text-align: center;\n    }\n\n    button#random {\n      background-color: var(--key-bg-correct);\n      color: var(--key-evaluated-text-color);\n      font-family: inherit;\n      font-weight: bold;\n      border-radius: 4px;\n      cursor: pointer;\n      border: none;\n      user-select: none;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      text-transform: uppercase;\n      -webkit-tap-highlight-color: rgba(0,0,0,0.3);\n      width: 80%;\n      font-size: 20px;\n      height: 52px;\n      -webkit-filter: brightness(100%);\n    }\n    button#random:hover {\n      opacity: 0.9;\n    }\n    button#random game-icon {\n      width: 24px;\n      height: 24px;\n      padding-left: 8px;\n    }</style>\n\n  <div class="container">\n    <h1>Statistics</h1>\n    <div id="statistics"></div>\n    <h1>Guess Distribution</h1>\n    <div id="guess-distribution"></div>\n    <div class="footer"></div>\n  </div>\n';
     var Ls = document.createElement("template");
     Ls.innerHTML =
       '\n  <div class="statistic-container">\n    <div class="statistic"></div>\n    <div class="label"></div>\n  </div>\n';
@@ -15398,7 +15402,7 @@
       '\n    <div class="graph-container">\n      <div class="guess"></div>\n      <div class="graph">\n        <div class="graph-bar">\n          <div class="num-guesses">\n        </div>\n      </div>\n      </div>\n    </div>\n';
     var Is = document.createElement("template");
     Is.innerHTML =
-      '\n  <div class="countdown">\n    <h1>Next WORDLE</h1>\n    <div id="timer">\n      <div class="statistic-container">\n        <div class="statistic timer">\n          <countdown-timer></countdown-timer>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class="share">\n    <button id="share-button">\n      Share <game-icon icon="share"></game-icon>\n    </button>\n  </div>\n';
+      '\n  <div class="custom">\n    <h1>Make your own</h1>\n    <input type="text" id="custom" name="custom" maxlength="5" autofocus >\n  </div>\n  <div class="random">\n    <button id="random">\n      Random\n    </button>\n  </div>\n';
     var Ms = {
         currentStreak: "Current Streak",
         maxStreak: "Max Streak",
@@ -15491,72 +15495,24 @@
                     m = Is.content.cloneNode(!0);
                   p.appendChild(m),
                     this.shadowRoot
-                      .querySelector("button#share-button")
+                      .querySelector("button#random")
                       .addEventListener("click", function (a) {
                         a.preventDefault(), a.stopPropagation();
-                        As(
-                          (function (e) {
-                            var a = e.evaluations,
-                              s = e.dayOffset,
-                              t = e.rowIndex,
-                              o = e.isHardMode,
-                              n = e.isWin,
-                              r = JSON.parse(window.localStorage.getItem(j)),
-                              i = JSON.parse(window.localStorage.getItem(S)),
-                              l = "Wordle ".concat(s);
-                            (l += " ".concat(n ? t : "X", "/").concat(6)),
-                              o && (l += "*");
-                            var d = "";
-                            return (
-                              a.forEach(function (e) {
-                                e &&
-                                  (e.forEach(function (e) {
-                                    if (e) {
-                                      var a = "";
-                                      switch (e) {
-                                        case Ma:
-                                          a = (function (e) {
-                                            return e ? "🟧" : "🟩";
-                                          })(i);
-                                          break;
-                                        case Ia:
-                                          a = (function (e) {
-                                            return e ? "🟦" : "🟨";
-                                          })(i);
-                                          break;
-                                        case Oa:
-                                          a = (function (e) {
-                                            return e ? "⬛" : "⬜";
-                                          })(r);
-                                      }
-                                      d += a;
-                                    }
-                                  }),
-                                  (d += "\n"));
-                              }),
-                              {
-                                text: "".concat(l, "\n\n").concat(d.trimEnd()),
-                              }
-                            );
-                          })({
-                            evaluations: e.gameApp.evaluations,
-                            dayOffset: e.gameApp.dayOffset,
-                            rowIndex: e.gameApp.rowIndex,
-                            isHardMode: e.gameApp.hardMode,
-                            isWin: e.gameApp.gameStatus === es,
-                          }),
-                          function () {
-                            e.gameApp.addToast(
-                              "Copied results to clipboard",
-                              2e3,
-                              !0
-                            );
-                          },
-                          function () {
-                            e.gameApp.addToast("Share failed", 2e3, !0);
-                          }
-                        );
+                        var link = randomWordLink();
+                        window.location.href = link;
                       });
+                  var input = this.shadowRoot.querySelector("#custom");
+                  input.addEventListener("click", function (a) {
+                    a.preventDefault(), a.stopPropagation();
+                  });
+                  input.addEventListener("keypress", function (a) {
+                    if (a.key == "Enter") {
+                      if (validateCustomWord(input.value)) {
+                        var link = newCustomWordLink(input.value);
+                        window.location.href = link;
+                      }
+                    }
+                  });
                 }
               },
             },
@@ -15744,11 +15700,7 @@
                   "backspace" === e &&
                     this.shadowRoot
                       .querySelector("path")
-                      .setAttribute("fill", "var(--color-tone-1)"),
-                  "share" === e &&
-                    this.shadowRoot
-                      .querySelector("path")
-                      .setAttribute("fill", "var(--white)");
+                      .setAttribute("fill", "var(--color-tone-1)");
               },
             },
           ]),
@@ -15756,81 +15708,7 @@
         );
       })(c(HTMLElement));
     customElements.define("game-icon", Fs);
-    var Ws = document.createElement("template");
-    Ws.innerHTML = '\n  <div id="timer"></div>\n';
-    var Ys = 6e4,
-      Js = 36e5,
-      Us = (function (e) {
-        r(t, e);
-        var a = h(t);
-        function t() {
-          var e;
-          s(this, t),
-            n(p((e = a.call(this))), "targetEpochMS", void 0),
-            n(p(e), "intervalId", void 0),
-            n(p(e), "$timer", void 0),
-            e.attachShadow({
-              mode: "open",
-            });
-          var o = new Date();
-          return (
-            o.setDate(o.getDate() + 1),
-            o.setHours(0, 0, 0, 0),
-            (e.targetEpochMS = o.getTime()),
-            e
-          );
-        }
-        return (
-          o(t, [
-            {
-              key: "padDigit",
-              value: function (e) {
-                return e.toString().padStart(2, "0");
-              },
-            },
-            {
-              key: "updateTimer",
-              value: function () {
-                var e,
-                  a = new Date().getTime(),
-                  s = Math.floor(this.targetEpochMS - a);
-                if (s <= 0) e = "00:00:00";
-                else {
-                  var t = Math.floor((s % 864e5) / Js),
-                    o = Math.floor((s % Js) / Ys),
-                    n = Math.floor((s % Ys) / 1e3);
-                  e = ""
-                    .concat(this.padDigit(t), ":")
-                    .concat(this.padDigit(o), ":")
-                    .concat(this.padDigit(n));
-                }
-                this.$timer.textContent = e;
-              },
-            },
-            {
-              key: "connectedCallback",
-              value: function () {
-                var e = this;
-                this.shadowRoot.appendChild(Ws.content.cloneNode(!0)),
-                  (this.$timer = this.shadowRoot.querySelector("#timer")),
-                  (this.intervalId = setInterval(function () {
-                    e.updateTimer();
-                  }, 200));
-              },
-            },
-            {
-              key: "disconnectedCallback",
-              value: function () {
-                clearInterval(this.intervalId);
-              },
-            },
-          ]),
-          t
-        );
-      })(c(HTMLElement));
     return (
-      customElements.define("countdown-timer", Us),
-      (e.CountdownTimer = Us),
       (e.GameApp = ts),
       (e.GameHelp = Hs),
       (e.GameIcon = Fs),
