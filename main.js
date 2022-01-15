@@ -14393,7 +14393,7 @@
     }
     function validateCustomWord(word) {
       // check if the word is a valid custom word
-      return La.includes(word || Ta.includes(word));
+      return La.includes(word) || Ta.includes(word);
     }
     function newCustomWordLink(word) {
       // create a new link with the custom param
