@@ -14382,6 +14382,15 @@
         t = new Date(a).setHours(0, 0, 0, 0) - s.setHours(0, 0, 0, 0);
       return Math.round(t / 864e5);
     }
+    function maybeRedirect() {
+      // if the query string contains a custom param that has 5 characters, base64 the value and redirect to the new url
+      const urlParams = new URLSearchParams(window.location.search);
+      const custom = urlParams.get("custom");
+      if (custom && custom.length === 5) {
+        const link = newCustomWordLink(custom);
+        window.location.href = link;
+      }
+    }
     function getCustomWord() {
       // if the query string contains a custom param, base64 decode that and return it
       const urlParams = new URLSearchParams(window.location.search);
@@ -14413,6 +14422,7 @@
     function Da(e) {
       // this function determines the solution (normally "today's word", but now: random or custom)
       var a = Math.floor(Math.random() * La.length);
+      maybeRedirect(); // if the custom word is human-readable, redirect
       const customWord = getCustomWord();
       return customWord ? customWord : La[a];
     }
